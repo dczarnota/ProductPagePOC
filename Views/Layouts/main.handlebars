@@ -1,0 +1,33 @@
+<!doctype html>
+{{{htmlTag}}}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    {{#each metaTags}}
+      {{{this}}}
+    {{/each}}
+  </head>
+  <body>
+       <div class="blog-nav">
+        <nav class="nav">
+          <a class="blog-nav-item active" href="/">Home</a>
+          <a class="blog-nav-item" href="/Isomorphic">Isomorphic</a>
+          <a class="blog-nav-item" href="/Product">Product Page</a>
+        </nav>    
+    </div>
+    
+    <div class="container">
+    {{{ body }}}
+    </div>
+    
+    <script src="https://cdn.socket.io/socket.io-1.1.0.js"></script>
+     
+    <script type="text/javascript" src="libs/react.js"></script>
+    <script type="text/javascript" src="libs/JSXTransformer.js"></script>
+    <script src="js/bundle.js"></script>
+    <!-- <script type="text/jsx" src="app.js"></script> -->
+
+  </body>
+</html>
