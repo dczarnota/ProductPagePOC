@@ -75,4 +75,7 @@ var basicCOmponent = require('../Components/basic.react.js');
   	 
   });
 
+router.get("/",function(req,res){
+  res.send("asdasD");
+})
   module.exports = router;
