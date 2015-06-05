@@ -21,7 +21,7 @@ app.use(reqLogger('dev'));
 // Set handlebars as the templating engine
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main', extname: '.handlebars'}));
-app.set('views',path.join(__dirname + '/views/'));
+//app.set('views',path.join(__dirname + '/views/'));
 app.set('view engine', 'handlebars');
 
 // Disable etag headers on responses
