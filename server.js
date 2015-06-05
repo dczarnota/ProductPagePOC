@@ -18,7 +18,7 @@ var port = process.env.PORT || 3000;
 
 app.use(reqLogger('dev'));
 // Set handlebars as the templating engine
-app.set('views', path.join(__dirname,'/views'));
+app.set('views', path.join(__dirname,'./views'));
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
