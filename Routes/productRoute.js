@@ -14,7 +14,7 @@ var basicCOmponent = require('../Components/basic.react.js');
   	router configuration after /Product/*
    */
   
-  router.get("/product", function(req,res){
+  router.get("/", function(req,res){
     var seoUrl= "http://api.art.com/ECommerceAPI.svc/jsonp/SEOMetaInfoGet?apiKey=519BAAC8E607413CA1FC043C92D08AAD&sessionId=A0F866D6907D411395E5CEDB6C359357&pageSourceType=ProductPage&itemId=9045049&categoryID=6126&pageNumber=1";
   	var url ="http://api.art.com/EcommerceAPI.svc/jsonp/CatalogItemGet?apiKey=519BAAC8E607413CA1FC043C92D08AAD&sessionId=A0F866D6907D411395E5CEDB6C359357&itemId=9045049&lookupType=ItemNumber";
   	httpRequest.makeGetRequest(url,null,function(err,data){
@@ -75,7 +75,7 @@ var basicCOmponent = require('../Components/basic.react.js');
   	 
   });
 
-router.get("/",function(req,res){
-  res.send("asdasD");
-})
+// router.get("/",function(req,res){
+//   res.send("asdasD");
+// })
   module.exports = router;
