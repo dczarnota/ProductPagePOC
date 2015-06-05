@@ -5,14 +5,14 @@
 var prettyStdOut = new PrettyStream();
 prettyStdOut.pipe(process.stdout);
 var log = new bunyan({
-  name: 'React101',
+  name: 'ProductPageLog',
   streams: [
     {
       stream: prettyStdOut,
       level: 'info'
     },
     {
-      path: 'React101.log',
+      path: 'ProductPage.log',
       level: 'trace'
     }
   ]
