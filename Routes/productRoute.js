@@ -62,7 +62,7 @@ var basicCOmponent = require('../Components/basic.react.js');
             metaTags.push(data[i].Value);
           }
 
-          res.render('product', {
+          res.render('product.handlebars', {
           htmlTag: data[0].Value,
           title:data[1].Value,
           metaTags:metaTags,
