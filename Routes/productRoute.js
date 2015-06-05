@@ -1,3 +1,4 @@
+ var JSX = require('node-jsx').install();
 var React = require('react');
 var  express = require('express');
 var  router = express.Router();
@@ -8,6 +9,7 @@ var  productModel = require('../Models/productModel');
 
 
 var productPageComponent = require('../Components/pp_pageApp.react.js');
+var basicCOmponent = require('../Components/basic.react.js');
   /*
   	router configuration after /Product/*
    */
@@ -49,10 +51,11 @@ var productPageComponent = require('../Components/pp_pageApp.react.js');
       /*
       renderthe react components
        */
-      // var markup = React.renderComponentToString(
-      //   productPageComponent({Title: titleData,Hero:herodata,BottomBar: bottomBarData})
-      // );
-
+      var markup = React.renderComponentToString(
+        productPageComponent({Title: titleData,Hero:herodata,BottomBar: bottomBarData})
+      );
+      
+      //var markup = React.renderComponentToString(basicCOmponent());
       var seoTags = metaTagBuilder.getMetaTags(seoUrl,function(err,data){
           var metaTags =[];
           for(i=2;i<data.length;i++){
@@ -63,8 +66,7 @@ var productPageComponent = require('../Components/pp_pageApp.react.js');
           htmlTag: data[0].Value,
           title:data[1].Value,
           metaTags:metaTags,
-          markup:"markup",
-          json: JSON.stringify(data,undefined,2)
+          markup:markup
         });
       })
   			

@@ -1,0 +1,1 @@
+console.error("Error: Cannot find module 'C:\\Users\\rbanerjee\\Documents\\GitHub Projects\\ProductPagePOC\\public\\app.js' from 'C:\\Users\\rbanerjee\\Documents\\GitHub Projects\\ProductPagePOC'");
