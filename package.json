@@ -1,7 +1,7 @@
 {
   "name": "ProductPagePOC",
   "version": "0.0.1",
-  "description": "ProductPagePOC",,
+  "description": "ProductPagePOC",
   "main": "server.js",
   "author": "Rajat Banerjee",
   "license": "MIT",
