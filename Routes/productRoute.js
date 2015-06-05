@@ -17,14 +17,18 @@ var basicCOmponent = require('../Components/basic.react.js');
   router.get("/", function(req,res){
     var seoUrl= "http://api.art.com/ECommerceAPI.svc/jsonp/SEOMetaInfoGet?apiKey=519BAAC8E607413CA1FC043C92D08AAD&sessionId=A0F866D6907D411395E5CEDB6C359357&pageSourceType=ProductPage&itemId=9045049&categoryID=6126&pageNumber=1";
   	var url ="http://api.art.com/EcommerceAPI.svc/jsonp/CatalogItemGet?apiKey=519BAAC8E607413CA1FC043C92D08AAD&sessionId=A0F866D6907D411395E5CEDB6C359357&itemId=9045049&lookupType=ItemNumber";
+    log.info('Initiating product Catelog item get call');
   	httpRequest.makeGetRequest(url,null,function(err,data){
+      if(!err){
+      log.info('Catelog item get call successful');
   		//get only the First Item of the aarray
   		data = data.d.Items[0];
 
+      log.info('Passing the rtaw data through filter to flatten the response');
   		//pass the raw data througn a filter to flatten the data
   		data = productModel.getFlatResponse(data);
   		
-  		if(!err){
+  		
         var titleData ={
           title: data.title,
           artist: data.artist,
@@ -48,6 +52,8 @@ var basicCOmponent = require('../Components/basic.react.js');
           price:"$"+data.prices.price,
           arrivesBy: monthNames[tomorrow.getMonth()]+ tomorrow.getDate()
         };
+
+      log.info('rendering component')
       /*
       renderthe react components
        */
@@ -55,22 +61,32 @@ var basicCOmponent = require('../Components/basic.react.js');
         productPageComponent({Title: titleData,Hero:herodata,BottomBar: bottomBarData})
       );
       
+      log.info('Initiating call to seo meta tag service');
       //var markup = React.renderComponentToString(basicCOmponent());
-      var seoTags = metaTagBuilder.getMetaTags(seoUrl,function(err,data){
+      var seoTags = metaTagBuilder.getMetaTags(seoUrl,function(error,data){
+        if(!error){
+        log.info('meta tag call successful');
           var metaTags =[];
           for(i=2;i<data.length;i++){
             metaTags.push(data[i].Value);
           }
 
           res.render('product', {
-          htmlTag: data[0].Value,
-          title:data[1].Value,
-          metaTags:metaTags,
-          markup:markup
-        });
+            htmlTag: data[0].Value,
+            title:data[1].Value,
+            metaTags:metaTags,
+            markup:markup
+          });
+        }
+        else{
+          log.error('Meta tag call failed, error ==>' + error);
+        }
       })
   			
   		}
+      else{
+        log.error('Catelog call failed => error ' + err)
+      }
   	});
   	 
   });
