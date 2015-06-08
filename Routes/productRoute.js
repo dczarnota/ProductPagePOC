@@ -7,7 +7,6 @@
  var log = require('../Utils/logger');
  var productModel = require('../Models/productModel');
  var productPageComponent = require('../Components/pp_pageApp.react.js');
- var basicCOmponent = require('../Components/basic.react.js');
  var async = require('async');
  var seoUrl = "http://api.art.com/ECommerceAPI.svc/jsonp/SEOMetaInfoGet?apiKey=519BAAC8E607413CA1FC043C92D08AAD&sessionId=A0F866D6907D411395E5CEDB6C359357&pageSourceType=ProductPage&itemId=9045049&categoryID=6126&pageNumber=1";
  var catelogITemUrl = "http://api.art.com/EcommerceAPI.svc/jsonp/CatalogItemGet?apiKey=519BAAC8E607413CA1FC043C92D08AAD&sessionId=A0F866D6907D411395E5CEDB6C359357&itemId=9045049&lookupType=ItemNumber";
@@ -59,6 +58,7 @@
        ];
 
        var bottomBarData = {
+        displayPrice:data.prices.displayPrice,
          price: "$" + data.prices.price,
          arrivesBy: monthNames[tomorrow.getMonth()] + tomorrow.getDate()
        };
@@ -71,7 +71,7 @@
          productPageComponent({
            Title: titleData,
            Hero: herodata,
-           BottomBar: bottomBarData
+           Price: bottomBarData
          })
        );
        var seoTags = metaTagBuilder.getMetaTags(seoUrl, function(error, data) {

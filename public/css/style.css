@@ -1,3 +1,6 @@
+*{
+    font-family: "Times New Roman",serif;
+}
 body{
   width: 100%;
   margin-left: auto;
@@ -231,30 +234,46 @@ ul {
   width: 28%;
   
 }
-.price{
-  width: 18%;
+.priceComponent{
+  height: 40px;
+  
 }
-.arrivesBy{
-  color:#ed944b;
+.prices{
+    font-size: 18px; 
+    font-weight: bold;
+}
+.prices span{
+  margin:5px;
 }
 .currency{
   color: red
 }
-.addToCart{
-  width: 18%;
-  
+.strike{
+  color: #636368;
+  text-decoration: line-through;
 }
-.myGal{
-  width: 5%;
-  border:1px solid grey;
-  height: 41px;
-  
-}
-.googleStoreLogo{
-  width: 12%;
-   border:1px solid grey;
+.addTocart_SaveToGal_Component{
   height: 50px;
-  
+}
+.addToCart{
+  width: 64%;
+  margin:5px 10px 5px 0px;
+  float: left;
+  text-align: center;
+  border:1px solid #d33f3f;  
+}
+.addToGal{
+  text-align: center;
+  width: 15%;
+  margin-top:6px;
+  float: left;
+  border:1px solid #9A9A9B;
+  height: 44px;
+}
+.fa-heart-o{
+  position: relative;
+  top: 5px;
+  color: #ed944b;
 }
 .btn {
   background: #ed944b;
@@ -271,7 +290,7 @@ ul {
   padding: 10px 20px 10px 20px;
   text-decoration: none;
     position: relative;
-  top: 12px;
+  
 }
 
 .btn:hover {
@@ -282,4 +301,68 @@ ul {
   background-image: -o-linear-gradient(top, #d17327, #d17327);
   background-image: linear-gradient(to bottom, #d17327, #d17327);
   text-decoration: none;
+}
+.addToCart a{
+  color: white;
+  text-decoration: none;
+}
+.rightComponent{
+  width: 35%;
+  float: left;
+}
+.framingOptionsComponent{
+  height: 150px;
+}
+.framingOptionsTitle{
+    font-size: 20px;
+  font-weight: normal;
+  color:#636368;
+  line-height: 14px;
+}
+.framingOptionsHelpText{
+  margin-top: 2px;
+  font-size: 14px;
+}
+.fa-info{
+  font-size: 5px;
+}
+.orangeText{
+ color: #ed944b;
+}
+.unframed, .recomended,.customFrame{
+  width: 30%;
+  border:1px solid #e5e5ea;
+  height: 100px;
+  float: left;
+  margin-right: 5px;
+  color: #636368;
+}
+.staticTextComponent{
+  margin:5px;
+  color: #636368;
+  font-size: 14px;
+  margin-left: 15px;
+}
+.staticTextComponent ul{
+    list-style-type: disc;
+}
+.helpline_Chat_Component{
+  margin: 20px 10px;
+  clear: both;
+  border-top: 1px solid #cfcfd6;
+  padding-top: 10px;
+}
+.imgChat{
+  width: 10%;
+  float: left;
+}
+.helpline{
+  width: 57%;
+  color: #636368;
+  font-size: 14px;
+  float: left;
+}
+.chatNow{
+  width: 25%;
+  float: left;
 }
