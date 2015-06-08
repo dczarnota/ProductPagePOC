@@ -12,39 +12,39 @@ module.exports = {
 				productType: rawProduct.ItemAttributes.Type || '',
 				CompositeSKU: rawProduct.CompositeSKU || "0",
 				serviceInfo: {
-					ServiceID: rawProduct.Service.ServiceID || 0,
-					Frame: rawProduct.Service.Frame || '',
+					ServiceID: (rawProduct.Service!=null && rawProduct.Service.ServiceID!=null?rawProduct.Service.ServiceID: 0),
+					Frame: (rawProduct.Service!=null && rawProduct.Service.Frame!=null?rawProduct.Service.Frame : ''),
 					CanvasMuseum: {
-						imageUrl: (rawProduct.Service.CanvasMuseum !=null?rawProduct.Service.CanvasMuseum.Image.HttpImageURL : ''),
-						dimensions :(rawProduct.Service.CanvasMuseum !=null?rawProduct.Service.CanvasMuseum.Image.Dimensions : ''),
+						imageUrl: (rawProduct.Service!=null && rawProduct.Service.CanvasMuseum !=null?rawProduct.Service.CanvasMuseum.Image.HttpImageURL : ''),
+						dimensions :(rawProduct.Service!=null && rawProduct.Service.CanvasMuseum !=null?rawProduct.Service.CanvasMuseum.Image.Dimensions : ''),
 					},
 					CanvasGallery: {
-						imageUrl:(rawProduct.Service.CanvasGallery !=null?rawProduct.Service.CanvasGallery.Image.HttpImageURL : ''),
-						dimensions :(rawProduct.Service.CanvasGallery !=null?rawProduct.Service.CanvasGallery.Image.Dimensions : ''),
+						imageUrl:(rawProduct.Service!=null && rawProduct.Service.CanvasGallery !=null?rawProduct.Service.CanvasGallery.Image.HttpImageURL : ''),
+						dimensions :(rawProduct.Service!=null && rawProduct.Service.CanvasGallery !=null?rawProduct.Service.CanvasGallery.Image.Dimensions : ''),
 					},
 					Mounting:{
-						imageUrl:(rawProduct.Service.Mounting !=null?rawProduct.Service.Mounting.Image.HttpImageURL : ''),
-						dimensions :(rawProduct.Service.Mounting !=null?rawProduct.Service.Mounting.Image.Dimensions :''),
+						imageUrl:(rawProduct.Service!=null && rawProduct.Service.Mounting !=null?rawProduct.Service.Mounting.Image.HttpImageURL : ''),
+						dimensions :(rawProduct.Service!=null && rawProduct.Service.Mounting !=null?rawProduct.Service.Mounting.Image.Dimensions :''),
 					},
 					Acrylic:{
-						imageUrl:(rawProduct.Service.Acrylic !=null?rawProduct.Service.Acrylic.Image.HttpImageURL :''),
-						dimensions :(rawProduct.Service.Acrylic !=null?rawProduct.Service.Acrylic.Image.Dimensions :''),
+						imageUrl:(rawProduct.Service!=null && rawProduct.Service.Acrylic !=null?rawProduct.Service.Acrylic.Image.HttpImageURL :''),
+						dimensions :(rawProduct.Service!=null && rawProduct.Service.Acrylic !=null?rawProduct.Service.Acrylic.Image.Dimensions :''),
 					},
 					PrintOnly: {
-						imageUrl:(rawProduct.Service.PrintOnly !=null?rawProduct.Service.PrintOnly.Image.HttpImageURL :''),
-						dimensions :(rawProduct.Service.PrintOnly !=null?rawProduct.Service.PrintOnly.Image.Dimensions :''),
+						imageUrl:(rawProduct.Service!=null && rawProduct.Service.PrintOnly !=null?rawProduct.Service.PrintOnly.Image.HttpImageURL :''),
+						dimensions :(rawProduct.Service!=null && rawProduct.Service.PrintOnly !=null?rawProduct.Service.PrintOnly.Image.Dimensions :''),
 					},
 					PosterCalendar: {
-						imageUrl:(rawProduct.Service.PosterCalendar !=null?rawProduct.Service.PosterCalendar.Image.HttpImageURL : ''),
-						dimensions :(rawProduct.Service.PosterCalendar !=null?rawProduct.Service.PosterCalendar.Image.Dimensions : ''),
+						imageUrl:(rawProduct.Service!=null && rawProduct.Service.PosterCalendar !=null?rawProduct.Service.PosterCalendar.Image.HttpImageURL : ''),
+						dimensions :(rawProduct.Service!=null && rawProduct.Service.PosterCalendar !=null?rawProduct.Service.PosterCalendar.Image.Dimensions : ''),
 					},
 					Laminate: {
-						imageUrl:(rawProduct.Service.PosterCalendar !=null?rawProduct.Service.Laminate.Image.HttpImageURL : ''),
-						dimensions :(rawProduct.Service.PosterCalendar !=null?rawProduct.Service.Laminate.Image.Dimensions : ''),
+						imageUrl:(rawProduct.Service!=null && rawProduct.Service.PosterCalendar !=null?rawProduct.Service.Laminate.Image.HttpImageURL : ''),
+						dimensions :(rawProduct.Service!=null && rawProduct.Service.PosterCalendar !=null?rawProduct.Service.Laminate.Image.Dimensions : ''),
 					},
 					LaminaFrame: {
-						imageUrl:(rawProduct.Service.PosterCalendar !=null?rawProduct.Service.LaminaFrame.Image.HttpImageURL : ''),
-						dimensions :(rawProduct.Service.PosterCalendar !=null?rawProduct.Service.LaminaFrame.Image.Dimensions : ''),
+						imageUrl:(rawProduct.Service!=null && rawProduct.Service.PosterCalendar !=null?rawProduct.Service.LaminaFrame.Image.HttpImageURL : ''),
+						dimensions :(rawProduct.Service!=null && rawProduct.Service.PosterCalendar !=null?rawProduct.Service.LaminaFrame.Image.Dimensions : ''),
 					},
 				},
 				images: {

@@ -10,7 +10,8 @@
  var async = require('async');
 
  var seoUrl = "http://api.art.com/ECommerceAPI.svc/jsonp/SEOMetaInfoGet?apiKey=519BAAC8E607413CA1FC043C92D08AAD&sessionId=A0F866D6907D411395E5CEDB6C359357&pageSourceType=ProductPage&itemId=8936349&categoryID=6126&pageNumber=1";
- var catelogITemUrl = "http://api.art.com/EcommerceAPI.svc/jsonp/CatalogItemGet?apiKey=519BAAC8E607413CA1FC043C92D08AAD&sessionId=130740845CEE4EF48D1CCCBA792C7365&itemId=8936349&lookupType=ItemNumber";
+ //var catelogITemUrl = "http://api.art.com/EcommerceAPI.svc/jsonp/CatalogItemGet?apiKey=519BAAC8E607413CA1FC043C92D08AAD&sessionId=130740845CEE4EF48D1CCCBA792C7365&itemId=8936349&lookupType=ItemNumber";
+ var catelogItemVariations ="http://api.art.com/EcommerceAPI.svc/jsonp/CatalogItemGetVariations?apiKey=519BAAC8E607413CA1FC043C92D08AAD&sessionId=130740845CEE4EF48D1CCCBA792C7365&itemId=8936349&lookupType=ItemNumber";
  /*
   router configuration after /Product/*
   */
@@ -23,11 +24,11 @@
      */
      function(callback) {
        log.info('Initiating product Catelog item get call');
-       httpRequest.makeGetRequest(catelogITemUrl, null, function(err, data) {
+       httpRequest.makeGetRequest(catelogItemVariations, null, function(err, data) {
          if (!err) {
            log.info('Catelog item get call successful');
            //get only the First Item of the aarray
-           data = data.d.Items[0];
+           data = data.d.Items[1];
            log.info('Passing the rtaw data through filter to flatten the response');
 
            callback(null, data);
@@ -60,6 +61,8 @@
          ProductPageUrl: data.ProductPageUrl,
          sku: data.sku
        }
+
+       data.images.genericImageUrl ="http://imgc.artprintimages.com/img/metal/art-print/robbie-george-the-maroon-bells-in-autumn_i-G-64-6410-72I9100Z.jpg";
        var herodata = data.images;
        var today = new Date();
        var tomorrow = new Date(today);
