@@ -8,7 +8,7 @@ var skinnyBannerComponent= require('./skinnyBannerComponent.react.js');
 var pp_pageApp = React.createClass({
 	getInitialState:  function(props) {
 		props=props || this.props;
-		console.log(props);
+		
 		return {Title:props.Title,Hero:props.Hero,Price:props.Price,PromoData:props.PromoData};
 	},
 	render: function() {
