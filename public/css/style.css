@@ -366,3 +366,55 @@ ul {
   width: 25%;
   float: left;
 }
+.skinny-banner-container, .promo-container{
+  display: block;
+}
+.skinny-banner-container{
+    margin: 4px 0 0;
+    text-transform: uppercase;
+}
+.promo-container{
+    width: 1008px;
+  margin: 0 auto;
+  height: 40px;
+  overflow: hidden;
+}
+.banner-text{
+    color: #F4444B;
+  float: left;
+  margin: -3px 0 0 0;
+  font-family: fantasy;
+  font-weight: 50;
+  font-size: 36px;
+}
+.banner-details {
+  background-color: #F4444B;
+  color: #FFF;
+  cursor: text;
+  float: left;
+  font-family: Helvetica,Arial,sans-serif!important;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 3px 8px 0 8px;
+  padding: 6px 8px 3px 8px;
+  text-align: center;
+  min-width: 89px;
+}
+
+.banner-exp-date1 {
+  color: #F4444B;
+  font: 14px 'BebasNeueRegular',Arial,sans-serif;
+  text-align: left;
+  padding: 10px 8px 0;
+}
+.banner-terms-link {
+  color: #F4444B;
+  cursor: pointer;
+  float: left;
+  font: 14px 'BebasNeueRegular',Arial,sans-serif;
+  text-align: left;
+  padding: 2px 0 0;
+  line-height: 5px;
+  text-decoration: underline;
+}

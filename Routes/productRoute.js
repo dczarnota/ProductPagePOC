@@ -34,8 +34,21 @@
            log.error('Catelog call failed => error ' + err)
          }
        });
+     }
+     ,
+     function(data,callback){
+       var api ="http://api.art.com/EcommerceAPI.svc/jsonp/PromosGetActive?apiKey=328CE70CEB414F77972BB1FA4449E915&sessionId=D6B5E1FC7661477CAFDB5F8D67D4E7BB";
+       log.info('Initiating skinny banner get call');
+       httpRequest.makeGetRequest(api, null, function(err, promoData) {
+         if (!err) {
+           log.info('skinny banner get call successful');
+           callback(null,promoData.d.Discount[0],data);
+         } else {
+           log.error('skinny banner get call failed => error ' + err)
+         }
+       });
      },
-     function(data, callback) {
+     function(promoData,data, callback) {
        log.info('Passing the rtaw data through filter to flatten the response');
        //pass the raw data througn a filter to flatten the data
        data = productModel.getFlatResponse(data);
@@ -67,34 +80,41 @@
          /*
          renderthe react components
           */
+        promoData.DiscountExpirationDt=  new Date (parseInt(promoData.DiscountExpirationDt.split("/Date(").pop().split(")/")[0]));
+        promoData.DiscountExpirationDt = ( promoData.DiscountExpirationDt.getMonth() + 1) + "/" +  promoData.DiscountExpirationDt.getDate() + "/" +  promoData.DiscountExpirationDt.getFullYear().toString().substr(2,2);
        var markup = React.renderComponentToString(
          productPageComponent({
            Title: titleData,
            Hero: herodata,
-           Price: bottomBarData
+           Price: bottomBarData,
+           PromoData:promoData
          })
        );
        var seoTags = metaTagBuilder.getMetaTags(seoUrl, function(error, data) {
          if (!error) {
            log.info('meta tag call successful');
-           callback(null,data, markup);
+           callback(null,promoData,data, markup);
          } else {
            log.error('Meta tag call failed, error ==>' + error);
          }
        });
      },
-     function(data,markup) {
+     function(promoData,data,markup) {
       log.info('rendering page');
        var metaTags = [];
        for (i = 2; i < data.length; i++) {
          metaTags.push(data[i].Value);
        }
 
+
+
+      console.log(promoData);
        res.render('product', {
          htmlTag: data[0].Value,
          title: data[1].Value,
          metaTags: metaTags,
          markup: markup
+        
        });
      }
    ]);
