@@ -208,7 +208,10 @@ ul {
   display: inline-block;
 }
 .heroThumb{
-  border:1px solid black; 
+  /*border:1px solid black; */
+}
+.heroThumb img{
+  width: 60px;
 }
 .stickyBottomBar{
     position: fixed;
@@ -336,6 +339,16 @@ ul {
   float: left;
   margin-right: 5px;
   color: #636368;
+  text-align: center;
+}
+
+.recomended span{
+  position: relative;
+  top: -10px;
+}
+.customFrame span{
+position: relative;
+  top: -12px;
 }
 .staticTextComponent{
   margin:5px;
@@ -383,9 +396,9 @@ ul {
     color: #F4444B;
   float: left;
   margin: -3px 0 0 0;
-  font-family: fantasy;
-  font-weight: 50;
-  font-size: 36px;
+  font-family: Arial;
+  font-weight: bolder;
+  font-size: 30px;
 }
 .banner-details {
   background-color: #F4444B;
@@ -397,7 +410,7 @@ ul {
   font-weight: bold;
   text-transform: uppercase;
   margin: 3px 8px 0 8px;
-  padding: 6px 8px 3px 8px;
+  padding: -6px 8px 3px 8px;
   text-align: center;
   min-width: 89px;
 }
@@ -406,7 +419,7 @@ ul {
   color: #F4444B;
   font: 14px 'BebasNeueRegular',Arial,sans-serif;
   text-align: left;
-  padding: 10px 8px 0;
+  padding: 0px 8px 0;
 }
 .banner-terms-link {
   color: #F4444B;
