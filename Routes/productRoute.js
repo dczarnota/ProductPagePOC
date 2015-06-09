@@ -77,7 +77,7 @@
        var bottomBarData = {
         displayPrice:data.prices.displayPrice,
          price: "$" + data.prices.price,
-         arrivesBy: monthNames[tomorrow.getMonth()] + tomorrow.getDate()
+         arrivesBy: monthNames[tomorrow.getMonth()] +" " +tomorrow.getDate()
        };
 
        log.info('rendering component')

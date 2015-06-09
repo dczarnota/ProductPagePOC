@@ -11,7 +11,7 @@ var pp_TitleComponent = React.createClass({
 					<h1>{data.title}</h1>
 				</div>
 				<div className="titleData">
-					<div id="prd-artist" className="prd-artist">By 
+					<div id="prd-artist" className="prd-artist"><span>By </span>
 						<a href={data.ProductPageUrl} className="artistLink">{data.artist}</a>
 					</div>
 					<div className="prd-link-divider">|</div>

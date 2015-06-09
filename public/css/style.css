@@ -183,6 +183,9 @@ ul {
   color:#ed944b;
   margin-right:5px;
 }
+.prd-artist a{
+  text-decoration: none;
+}
 .titleData{
   display: inline-flex;
 }

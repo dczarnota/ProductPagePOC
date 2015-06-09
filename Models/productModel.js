@@ -4,7 +4,7 @@ module.exports = {
 
 		var product = {
 			title: rawProduct.ItemAttributes.Title || '',
-				artist: rawProduct.ItemAttributes.Artist.FirstName + rawProduct.ItemAttributes.Artist.LastName || '',
+				artist: rawProduct.ItemAttributes.Artist.FirstName +" "+ rawProduct.ItemAttributes.Artist.LastName || '',
 				apNum: rawProduct.ItemNumber || '',
 				podConfigId: rawProduct.podConfigId || 0,
 				sku: rawProduct.Sku || '',
