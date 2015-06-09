@@ -15,7 +15,7 @@ var rightComponent = React.createClass({
 	render: function() {
 		var priceData = this.props.priceData;
 		return (
-			<div className="rightComponent">
+			<div className="rightComponent pure-u-1 pure-u-md-2-5">
 				<FramingOptions></FramingOptions>
 				<PriceComnponent priceData={priceData}></PriceComnponent>
 				<StaticTextComponent></StaticTextComponent>

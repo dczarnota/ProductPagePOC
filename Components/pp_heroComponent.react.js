@@ -6,7 +6,7 @@ var pp_heroComponent = React.createClass({
 	render: function() {
 		var data = this.props.heroData;		
 		return (
-			<div className="heroModule">
+			<div className="heroModule pure-u-1 pure-u-md-3-5">
 				<div className="sideNav">
 					<div className="heroThumb">
 						<img src={data.thumbnailImageUrl}/>

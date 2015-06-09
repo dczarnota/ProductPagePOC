@@ -1,5 +1,6 @@
 *{
     font-family: "Times New Roman",serif;
+    letter-spacing: normal;
 }
 body{
   width: 100%;
@@ -177,7 +178,7 @@ ul {
 
 .container{
     margin: 12px auto 0!important;
-  width: 1008px!important;
+  max-width: 1008px;
 }
 .prd-artist,.prd-artist a,.prd-type,.prd-itemnum{
   color:#ed944b;
@@ -196,7 +197,7 @@ ul {
   margin:0;
 }
 .heroModule{
-  width: 65%;
+  /*width: 65%;*/
 }
 .sideNav{
   width: 20%;
@@ -313,8 +314,8 @@ ul {
   text-decoration: none;
 }
 .rightComponent{
-  width: 35%;
-  float: left;
+  /*width: 35%;
+  float: left;*/
 }
 .framingOptionsComponent{
   height: 150px;
@@ -434,3 +435,115 @@ position: relative;
   line-height: 5px;
   text-decoration: underline;
 }
+ @media only screen and (min-width: 568px) and (max-width: 666px), only screen and (max-width: 374px), only screen and (min-width: 375px) and (max-width: 567px), only screen and (min-width: 667px) and (max-width: 765px), only screen and (min-width: 768px) and (max-width: 1023px) {
+   .skinny-banner-container {
+    margin: 0px auto;
+    position: relative;
+  }
+   .skinny-banner-container .promo-container {
+    width: 100%;
+    display: table !important;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #f5f5f5;
+  }
+   .skinny-banner-container .banner-text {
+    float: none;
+    font-size: 21px;
+    display: table-cell;
+    vertical-align: middle;
+    margin: auto;
+    line-height: 0.9em;
+    padding-top: 4px;
+    text-align: center;
+  }
+   .skinny-banner-container .banner-details {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #F4444B;
+    color: #FFF;
+    cursor: text;
+    float: none;
+    font-family: Helvetica, Arial, sans-serif !important;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    /* padding: 6px 8px 3px 8px; */
+    text-align: center;
+    min-width: 89px;
+    box-sizing: border-box;
+    padding: 0;
+    padding-top: 4px;
+  }
+   .skinny-banner-container .banner-exp-date {
+    display: table-cell;
+    vertical-align: top;
+    padding: 2px 0 0 4px;
+    line-height: 0.9em;
+    width: 65px;
+  }
+   .skinny-banner-container .banner-terms-link {
+    display: table-cell;
+    vertical-align: bottom;
+    overflow: visible;
+    width: auto;
+    padding: 0px;
+    line-height: 1.2em;
+    float: none;
+    text-indent: -65px;
+  }
+}
+@media only screen and (max-width: 374px) {
+   .skinny-banner-container {
+    width: 300px;
+  }
+   .skinny-banner-container .banner-text {
+    font-size: 14px;
+  }
+   .skinny-banner-container #banner-terms {
+    width: 250px;
+  }
+}
+@media only screen and (min-width: 375px) and (max-width: 567px) {
+   .skinny-banner-container {
+    width: 355px;
+  }
+   .skinny-banner-container .banner-text {
+    font-size: 14px;
+  }
+   .skinny-banner-container #banner-terms {
+    width: 250px;
+  }
+}
+@media only screen and (min-width: 568px) and (max-width: 666px) {
+   .skinny-banner-container {
+    width: 548px;
+  }
+}
+@media only screen and (min-width: 667px) and (max-width: 765px) {
+   .skinny-banner-container {
+    width: 647px;
+  }
+   .skinny-banner-container .banner-text {
+    font-size: 14px;
+  }
+   .skinny-banner-container #banner-terms {
+    width: 250px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+   .skinny-banner-container {
+    width: 748px;
+  }
+   .skinny-banner-container .banner-text {
+    font-size: 14px;
+  }
+   .skinny-banner-container #banner-terms {
+    width: 250px;
+  }
+}
+
+#hdr-new-container{
+    margin: 12px auto 0!important;
+  max-width: 1010px;0}
