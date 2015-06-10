@@ -106,14 +106,14 @@
      function(promoData,data,markup) {
       log.info('rendering page');
        var metaTags = [];
-       console.log(data);
+       // console.log(data);
        for (i = 2; i < data.length; i++) {
          metaTags.push(data[i].Value);
        }
 
 
 
-      console.log(promoData);
+      // console.log(promoData);
        res.render('product', {
          htmlTag: data[0].Value,
          title: data[1].Value,
