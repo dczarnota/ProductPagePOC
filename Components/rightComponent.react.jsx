@@ -1,15 +1,15 @@
 /** @jsx React.DOM */
 var React = require('react');
 
-var FramingOptions= require('./framingOptions.react.js');
+var FramingOptions= require('./framingOptions.react');
 
-var PriceComnponent = require('./priceComponent.react.js');
+var PriceComnponent = require('./priceComponent.react');
 
-var StaticTextComponent = require('./staticTextComponent.react.js');
+var StaticTextComponent = require('./staticTextComponent.react');
 
-var AddTocart_SaveToGal_Component = require('./addTocart_SaveToGal_Component.react.js');
+var AddTocart_SaveToGal_Component = require('./addTocart_SaveToGal_Component.react');
 
-var Helpline_Chat_Component = require('./helpline_Chat_Component.react.js');
+var Helpline_Chat_Component = require('./helpline_Chat_Component.react');
 var rightComponent = React.createClass({
 
 	render: function() {

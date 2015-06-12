@@ -5,6 +5,7 @@ var skinnyBannerComponent = React.createClass({
 
 	render: function() {
 		var data= this.props.promoData;
+		// console.log('skinny-banner- data: ',this.props)
 		return (
 			<div className="skinny-banner-container">
 				<div className="promo-container">
